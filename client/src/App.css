@@ -8,5 +8,9 @@
 .form-container {
     width: 400px;
     margin: auto;
-    margin-top: 10px;
+}
+
+.post-text {
+    display: block !important;
+    margin-bottom: 5px !important;
 }
