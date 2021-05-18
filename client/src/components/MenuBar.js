@@ -16,7 +16,7 @@ function MenuBar() {
     const handleItemClick = (e, { name }) => setActiveItem(name);
 
     const menuBar = user ? (
-        <Menu pointing secondary size="massive" color="teal">
+        <Menu inverted pointing secondary size="massive" color="teal">
             <Menu.Item
                 name={user.username}
                 active
@@ -27,17 +27,19 @@ function MenuBar() {
                 <Menu.Item
                     name='logout'
                     onClick={logout}
+                    as={Link}
+                    to='/login'
                 />
             </Menu.Menu>
         </Menu>
     ) : (
-        <Menu pointing secondary size="massive" color="teal">
+        <Menu inverted pointing secondary size="massive" color="teal">
             <Menu.Item
                 name='home'
                 active={activeItem === 'home'}
                 onClick={handleItemClick}
                 as={Link}
-                to='/'
+                to='/login'
             />
             <Menu.Menu position='right'>
                 <Menu.Item

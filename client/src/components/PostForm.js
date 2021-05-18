@@ -38,15 +38,16 @@ function PostForm() {
     return (
         <Form onSubmit={onSubmit}>
             <Form.Field>
-                <h2>Create A Post:</h2>
+                <h2 className="create-header">Create A Post:</h2>
                 <Form.TextArea
+                width={8}
                     className="post-text"
                     placeholder="Say something..."
                     name="body"
                     onChange={onChange}
                     value={values.body}
                 />
-                <Button type="submit" color="teal">
+                <Button type="submit" color="teal" style={{ marginBottom: 30 }}>
                     Submit
                 </Button>
             </Form.Field>

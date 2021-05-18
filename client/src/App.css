@@ -1,6 +1,7 @@
 .page-title {
     display: block !important;
     text-align: center;
+    color: #fff;
     font-size: 2rem;
     margin-top: 10px;
 }
@@ -10,7 +11,10 @@
     margin: auto;
 }
 
-.post-text {
-    display: block !important;
-    margin-bottom: 5px !important;
+body {
+    background-color: #272727;
+}
+
+.create-header {
+    color: #fff;
 }

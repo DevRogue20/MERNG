@@ -32,8 +32,8 @@ function Login(props) {
 
     return (
         <div className="form-container">
-            <Form onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
-                <h1>Login</h1>
+            <Form inverted onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
+                <h1 style={{color: 'white' }}>Login</h1>
                 <Form.Input
                     label="Username"
                     placeholder="Username..."
