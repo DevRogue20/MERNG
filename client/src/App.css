@@ -18,3 +18,13 @@ body {
 .create-header {
     color: #fff;
 }
+
+.post-form {
+    margin-top: 50px !important;
+    margin-bottom: 50px !important;
+}
+
+.ui.teal.button:focus,
+.ui.teal.buttons .button:focus {
+    background-color: #00b5ad;
+}

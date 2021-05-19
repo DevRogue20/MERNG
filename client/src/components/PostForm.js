@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Form } from 'semantic-ui-react';
 import gql from 'graphql-tag';
 import { useMutation } from '@apollo/client';
@@ -8,6 +8,7 @@ import { FETCH_POSTS_QUERY } from '../util/graphql';
 
 function PostForm() {
 
+    const [errors, setErrors] = useState({});
     const { values, onChange, onSubmit } = useForm(createPostCallback, {
         body: ''
     });
@@ -16,19 +17,22 @@ function PostForm() {
         variables: values,
         update(proxy, result) {
             const data = proxy.readQuery({
-              query: FETCH_POSTS_QUERY,
+                query: FETCH_POSTS_QUERY,
             })
             proxy.writeQuery({
-              query: FETCH_POSTS_QUERY,
-              data: {
-                getPosts: [
-                  result.data.createPost,
-                  ...data.getPosts,
-                ],
-              },
+                query: FETCH_POSTS_QUERY,
+                data: {
+                    getPosts: [
+                        result.data.createPost,
+                        ...data.getPosts,
+                    ],
+                },
             })
             values.body = ''
-          },
+        },
+        onError(err) {
+            setErrors(err.graphQLErrors[0].extensions.exception.errors)
+        }
     });
 
     function createPostCallback() {
@@ -36,22 +40,32 @@ function PostForm() {
     }
 
     return (
+        <>
         <Form onSubmit={onSubmit}>
-            <Form.Field>
+            <Form.Field className="post-form">
                 <h2 className="create-header">Create A Post:</h2>
                 <Form.TextArea
-                width={8}
+                    width={8}
                     className="post-text"
                     placeholder="Say something..."
                     name="body"
                     onChange={onChange}
                     value={values.body}
+                    error={error ? true : false}
                 />
                 <Button type="submit" color="teal" style={{ marginBottom: 30 }}>
                     Submit
                 </Button>
             </Form.Field>
         </Form>
+        {error && (
+            <div className="ui error message" style={{ marginBottom: 20 }}>
+                <ul className="list">
+                    <li>{error.graphQLErrors[0].message}</li>
+                </ul>
+            </div>
+        )}
+        </>
     )
 }
 
