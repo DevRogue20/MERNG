@@ -1,25 +1,16 @@
-.page-title {
-    display: block !important;
-    text-align: center;
-    color: #fff;
-    font-size: 2rem;
-    margin-top: 10px;
-}
-
-.form-container {
-    width: 400px;
-    margin: auto;
-}
 
 body {
     background-color: #272727;
 }
 
-.comment-card {
+.comment-card, 
+.single-post-card {
     margin-left: 80px !important;
 }
 
-.comment-image {
+.comment-image, 
+.post-image, 
+.single-post-image {
     margin-bottom: 10px;
     border-radius: 100%;
 }
@@ -28,25 +19,26 @@ body {
     color: #fff;
 }
 
-.post-form {
-    margin-top: 50px !important;
-    margin-bottom: 50px !important;
+.form-container {
+    width: 400px;
+    margin: auto;
 }
 
-.post-image {
-    border-radius: 100%;
-    margin-bottom: 10px;
+.post-form {
+    position: fixed;
+    width: 900px;
+}
+
+.page-title {
+    display: block !important;
+    text-align: center;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 10px;
 }
 
 .ui.teal.button:focus,
-.ui.teal.buttons .button:focus {
+.ui.teal.buttons,
+.button:focus {
     background-color: #00b5ad;
-}
-
-.single-post-card {
-    margin-left: 80px !important;
-}
-
-.single-post-image {
-    border-radius: 100%;
 }
