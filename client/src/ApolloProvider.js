@@ -12,7 +12,7 @@ const httpLink = createHttpLink({
 
 const authLink = setContext(() => {
     const token = localStorage.getItem('jwtToken');
-    return{
+    return {
         headers: {
             Authorization: token ? `Bearer ${token}` : ''
         }
@@ -28,6 +28,6 @@ const client = new ApolloClient({
 
 export default (
     <ApolloProvider client={client}>
-        <App/>
+        <App />
     </ApolloProvider>
 )

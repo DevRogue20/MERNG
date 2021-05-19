@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../context/auth';
 
- 
+
 function MenuBar() {
-    const { user, logout } = useContext(AuthContext); 
+    const { user, logout } = useContext(AuthContext);
     const pathname = window.location.pathname;
 
     const path = pathname === '/' ? 'home' : pathname.substr(1);
     const [activeItem, setActiveItem] = useState(path);
 
- 
+
     const handleItemClick = (e, { name }) => setActiveItem(name);
 
     const menuBar = user ? (

@@ -33,7 +33,7 @@ function Login(props) {
     return (
         <div className="form-container">
             <Form inverted onSubmit={onSubmit} noValidate className={loading ? 'loading' : ''}>
-                <h1 style={{color: 'white' }}>Login</h1>
+                <h1 style={{ color: 'white' }}>Login</h1>
                 <Form.Input
                     label="Username"
                     placeholder="Username..."

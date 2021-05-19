@@ -72,7 +72,11 @@ function SinglePost(props) {
                             <Card className="comment-card" fluid key={comment.id} centered style={{ color: "teal" }}>
                                 <Card.Content>
                                     <Image
-                                        className="comment-image" size="mini" floated="left" src="https://semantic-ui.com/images/avatar/large/jenny.jpg" />
+                                        className="comment-image"
+                                        size="mini"
+                                        floated="left"
+                                        src="https://semantic-ui.com/images/avatar/large/jenny.jpg"
+                                    />
                                     <Card.Header style={{ color: "teal" }}>{comment.username}</Card.Header>
                                     <Card.Meta>{moment(comment.createdAt).fromNow()} ago </Card.Meta>
                                     <Card.Description style={{ color: "teal " }}>{comment.body}</Card.Description>

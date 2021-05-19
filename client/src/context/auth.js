@@ -5,10 +5,10 @@ const initialState = {
     user: null
 }
 
-if(localStorage.getItem('jwtToken')){
+if (localStorage.getItem('jwtToken')) {
     const decodedToken = jwtDecode(localStorage.getItem('jwtToken'));
 
-    if(decodedToken.exp * 1000 < Date.now()){
+    if (decodedToken.exp * 1000 < Date.now()) {
         localStorage.removeItem('jwtToken')
     } else {
         initialState.user = decodedToken;
@@ -63,4 +63,4 @@ function AuthProvider(props) {
     )
 }
 
-export {AuthContext, AuthProvider }
+export { AuthContext, AuthProvider }
