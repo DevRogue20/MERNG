@@ -15,6 +15,15 @@ body {
     background-color: #272727;
 }
 
+.comment-card {
+    margin-left: 80px !important;
+}
+
+.comment-image {
+    margin-bottom: 10px;
+    border-radius: 100%;
+}
+
 .create-header {
     color: #fff;
 }
@@ -24,7 +33,20 @@ body {
     margin-bottom: 50px !important;
 }
 
+.post-image {
+    border-radius: 100%;
+    margin-bottom: 10px;
+}
+
 .ui.teal.button:focus,
 .ui.teal.buttons .button:focus {
     background-color: #00b5ad;
+}
+
+.single-post-card {
+    margin-left: 80px !important;
+}
+
+.single-post-image {
+    border-radius: 100%;
 }

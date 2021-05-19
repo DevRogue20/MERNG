@@ -20,7 +20,7 @@ function SinglePost(props) {
         }
     });
 
-    function deletePostCallback(){
+    function deletePostCallback() {
         props.history.push('/');
     }
 
@@ -36,36 +36,54 @@ function SinglePost(props) {
                 <Grid.Row>
                     <Grid.Column width={2}>
                         <Image
+                            className="single-post-image"
                             src='https://semantic-ui.com/images/avatar/large/jenny.jpg'
                             size="small"
-                            float="right" />
+                            float="right"
+                        />
                     </Grid.Column>
                     <Grid.Column width={10}>
-                        <Card fluid>
+                        <Card className="single-post-card" fluid>
                             <Card.Content>
-                                <Card.Header>{username}</Card.Header>
+                                <Card.Header style={{ color: "teal " }}>{username}</Card.Header>
                                 <Card.Meta>{moment(createdAt).fromNow()} ago </Card.Meta>
-                                <Card.Description>{body}</Card.Description>
+                                <Card.Description style={{ color: "teal " }}>{body}</Card.Description>
                             </Card.Content>
-                            <hr/>
+                            <hr />
                             <Card.Content extra>
-                                <LikeButton user={user} post={{ id, likeCount, likes }}/>
+                                <LikeButton user={user} post={{ id, likeCount, likes }} />
                                 <Button
                                     as="div"
                                     labelPosition="right"
                                     onClick={() => console.log('Comment on post')}>
-                                        <Button basic color="blue">
-                                            <Icon name="comments"/>
-                                        </Button>
-                                        <Label basic color="blue" pointing="left">
-                                            {commentCount}
-                                        </Label>
+                                    <Button basic color="blue">
+                                        <Icon name="comments" />
                                     </Button>
-                                    {user && user.username === username && (
-                                        <DeleteButton postID={id} callback={deletePostCallback} />
-                                    )}
+                                    <Label basic color="blue" pointing="left">
+                                        {commentCount}
+                                    </Label>
+                                </Button>
+                                {user && user.username === username && (
+                                    <DeleteButton postID={id} callback={deletePostCallback} />
+                                )}
                             </Card.Content>
-                        </Card>
+                        </Card >
+                        {comments.map(comment => (
+                            <Card className="comment-card" fluid key={comment.id} centered style={{ color: "teal" }}>
+                                <Card.Content>
+                                    <Image
+                                        className="comment-image" size="mini" floated="left" src="https://semantic-ui.com/images/avatar/large/jenny.jpg" />
+                                    <Card.Header style={{ color: "teal" }}>{comment.username}</Card.Header>
+                                    <Card.Meta>{moment(comment.createdAt).fromNow()} ago </Card.Meta>
+                                    <Card.Description style={{ color: "teal " }}>{comment.body}</Card.Description>
+                                </Card.Content>
+                                <Card.Content extra>
+                                    {user && user.username === comment.username && (
+                                        <DeleteButton postID={id} commentID={comment.id} />
+                                    )}
+                                </Card.Content>
+                            </Card>
+                        ))}
                     </Grid.Column>
                 </Grid.Row>
             </Grid>
