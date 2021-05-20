@@ -33,7 +33,7 @@ function MenuBar() {
             </Menu.Menu>
         </Menu>
     ) : (
-        <Menu fixed="top" inverted pointing secondary size="massive" color="teal">
+        <Menu inverted pointing secondary size="massive" color="teal">
             <Menu.Item
                 name='home'
                 active={activeItem === 'home'}

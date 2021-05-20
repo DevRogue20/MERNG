@@ -16,7 +16,7 @@ function PostCard({
     return (
         <Card fluid centered className="post-card" color="teal">
             <Card.Content>
-                <Image className="post-image" size='mini' src='https://semantic-ui.com/images/avatar/large/jenny.jpg' />
+                <Image floated="right" className="post-image" size='mini' src='https://semantic-ui.com/images/avatar/large/jenny.jpg' />
                 <Card.Header style={{ color: "teal" }}>{username}</Card.Header>
                 <Card.Meta as={Link} to={`/posts/${id}`}>{moment(createdAt).fromNow(true)} ago </Card.Meta>
                 <Card.Description style={{ color: "teal" }}>{body}</Card.Description>
