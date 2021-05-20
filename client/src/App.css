@@ -5,13 +5,14 @@ body {
 
 .comment-card, 
 .single-post-card {
-    margin-left: 80px !important;
+    margin-left: 120px !important;
+    width: 600px !important;
 }
 
 .comment-image, 
-.post-image, 
-.single-post-image {
+.post-image {
     margin-bottom: 10px;
+    margin-top: 10px;
     border-radius: 100%;
 }
 
@@ -24,6 +25,10 @@ body {
     margin: auto;
 }
 
+.post-card {
+    width: 600px !important;
+}
+
 .post-form {
     width: 800px;
 }
@@ -34,6 +39,11 @@ body {
     color: #fff;
     font-size: 2rem;
     margin-top: 10px;
+}
+
+.single-post-image {
+    margin-left: 65px;
+    border-radius: 100%;
 }
 
 .ui.teal.button:focus,
