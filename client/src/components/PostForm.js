@@ -41,10 +41,10 @@ function PostForm() {
 
     return (
         <>
-            <Form onSubmit={onSubmit}>
-                <Form.Field className="post-form">
+            <Form onSubmit={onSubmit}  className="post-form">
+                <Form.Field>
                     <h2 className="create-header">Create A Post:</h2>
-                    <Form.TextArea
+                    <Form.Input
                         width={8}
                         className="post-text"
                         placeholder="Say something..."

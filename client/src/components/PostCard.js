@@ -14,7 +14,7 @@ function PostCard({
     const { user } = useContext(AuthContext);
 
     return (
-        <Card fluid className="post-card" color="teal">
+        <Card fluid centered className="post-card" color="teal">
             <Card.Content>
                 <Image className="post-image" size='mini' src='https://semantic-ui.com/images/avatar/large/jenny.jpg' />
                 <Card.Header style={{ color: "teal" }}>{username}</Card.Header>

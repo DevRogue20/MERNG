@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import { Menu } from 'semantic-ui-react';
+import {  Container, Menu } from 'semantic-ui-react';
 import { Link } from 'react-router-dom';
 
 import { AuthContext } from '../context/auth';
@@ -16,7 +16,7 @@ function MenuBar() {
     const handleItemClick = (e, { name }) => setActiveItem(name);
 
     const menuBar = user ? (
-        <Menu inverted pointing secondary size="massive" color="teal">
+        <Menu fluid pointing inverted secondary size="massive" color="teal">
             <Menu.Item
                 name={user.username}
                 active
@@ -33,7 +33,7 @@ function MenuBar() {
             </Menu.Menu>
         </Menu>
     ) : (
-        <Menu inverted pointing secondary size="massive" color="teal">
+        <Menu fixed="top" inverted pointing secondary size="massive" color="teal">
             <Menu.Item
                 name='home'
                 active={activeItem === 'home'}
